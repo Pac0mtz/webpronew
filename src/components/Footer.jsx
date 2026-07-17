@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { business } from "../data/site";
+import { business, services } from "../data/site";
 import "./Footer.css";
 
 export default function Footer() {
@@ -23,6 +23,15 @@ export default function Footer() {
               Chicago locals who build websites that actually work. Web design, development, SEO & digital
               marketing for local businesses.
             </p>
+          </div>
+
+          <div className="footer-col">
+            <h4>Services</h4>
+            {services.map((s) => (
+              <Link key={s.slug} to={`/services/${s.slug}`}>
+                {s.title}
+              </Link>
+            ))}
           </div>
 
           <div className="footer-col">

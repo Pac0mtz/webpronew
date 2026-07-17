@@ -75,8 +75,19 @@
   background: var(--emerald-400);
 }
 
-.service-row-cta {
+.service-row-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   flex-shrink: 0;
+}
+
+.service-row-title-link {
+  transition: color 0.3s var(--ease);
+}
+
+.service-row-title-link:hover {
+  color: var(--emerald-300);
 }
 
 @media (max-width: 760px) {
@@ -85,7 +96,8 @@
     gap: 16px;
     padding: 26px;
   }
-  .service-row-cta {
+  .service-row-ctas {
+    flex-direction: row;
     width: fit-content;
   }
 }

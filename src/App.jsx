@@ -9,6 +9,7 @@ import ScrollProgress from "./components/ScrollProgress";
 import Preloader from "./components/Preloader";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Portfolio from "./pages/Portfolio";
 import PortfolioDetail from "./pages/PortfolioDetail";
 import About from "./pages/About";
@@ -81,6 +82,14 @@ export default function App() {
             element={
               <PageWrap>
                 <Services />
+              </PageWrap>
+            }
+          />
+          <Route
+            path="/services/:slug"
+            element={
+              <PageWrap>
+                <ServiceDetail />
               </PageWrap>
             }
           />

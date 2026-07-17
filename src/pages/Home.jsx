@@ -87,6 +87,11 @@ export default function Home() {
           </Reveal>
         </motion.div>
 
+        <Reveal variant="fade" delay={1.1} className="hero-scroll" aria-hidden="true">
+          <span className="hero-scroll-text">Scroll</span>
+          <span className="hero-scroll-line" />
+        </Reveal>
+
         <Reveal variant="fade" delay={0.9} className="hero-marquee">
           <Marquee items={industries} />
         </Reveal>
@@ -127,11 +132,18 @@ export default function Home() {
 
           <div className="services-grid">
             {services.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 3) * 0.08} className="service-card glass">
-                <span className="service-tag">{s.tag}</span>
-                <h3>{s.title}</h3>
-                <p>{s.summary}</p>
-                <span className="service-category">{s.category}</span>
+              <Reveal key={s.slug} delay={(i % 3) * 0.08}>
+                <Link to={`/services/${s.slug}`} className="service-card glass" data-cursor-hover>
+                  <span className="service-tag">{s.tag}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.summary}</p>
+                  <span className="service-card-foot">
+                    <span className="service-category">{s.category}</span>
+                    <span className="service-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>

@@ -28,7 +28,11 @@ export default function Services() {
               <span className="service-row-tag">{s.tag}</span>
               <div className="service-row-body">
                 <span className="service-row-cat">{s.category}</span>
-                <h3>{s.title}</h3>
+                <h3>
+                  <Link to={`/services/${s.slug}`} className="service-row-title-link" data-cursor-hover>
+                    {s.title}
+                  </Link>
+                </h3>
                 <p>{s.summary}</p>
                 <ul className="service-row-points">
                   {s.points.map((p) => (
@@ -36,9 +40,14 @@ export default function Services() {
                   ))}
                 </ul>
               </div>
-              <Link to="/contact" className="btn btn-ghost btn-sm service-row-cta" data-cursor-hover>
-                Get Started
-              </Link>
+              <div className="service-row-ctas">
+                <Link to={`/services/${s.slug}`} className="btn btn-primary btn-sm" data-cursor-hover>
+                  Learn More →
+                </Link>
+                <Link to="/contact" className="btn btn-ghost btn-sm" data-cursor-hover>
+                  Get a Quote
+                </Link>
+              </div>
             </Reveal>
           ))}
         </div>
