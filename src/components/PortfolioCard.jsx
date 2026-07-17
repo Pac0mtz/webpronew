@@ -5,6 +5,9 @@ export default function PortfolioCard({ project, index = 0 }) {
   return (
     <Link to={`/portfolio/${project.slug}`} className="pf-card glass" data-cursor-hover>
       <div className="pf-card-art" data-index={(index % 6) + 1}>
+        {project.image ? (
+          <img src={project.image} alt={`${project.title} website preview`} loading="lazy" className="pf-card-img" />
+        ) : null}
         <span className="pf-card-tag">{project.tag}</span>
       </div>
       <div className="pf-card-body">

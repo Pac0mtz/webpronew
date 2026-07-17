@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ScrollProgress from "./components/ScrollProgress";
+import Preloader from "./components/Preloader";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
@@ -30,6 +31,7 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
       <div className="grain" />
       <ScrollProgress />
       <Cursor />

@@ -87,6 +87,8 @@ export const portfolio = [
     title: "AB Environmental Consulting",
     categories: ["Environmental", "Consulting"],
     summary: "Professional environmental consulting website with service listings, case studies, and lead capture.",
+    image: "/images/portfolio/ab-environmental-consulting.jpg",
+    liveUrl: "https://abenvironmentalcons.com",
   },
   {
     slug: "the-fence-solutions",
@@ -94,6 +96,8 @@ export const portfolio = [
     title: "The Fence Solutions",
     categories: ["Fencing", "Design Gallery"],
     summary: "Fencing contractor website with a design gallery, material options, and online quote requests.",
+    image: "/images/portfolio/the-fence-solutions.jpg",
+    liveUrl: "https://thefencesolutions.com",
   },
   {
     slug: "al-and-joes",
@@ -101,6 +105,8 @@ export const portfolio = [
     title: "Al & Joe's",
     categories: ["Restaurant", "Online Ordering"],
     summary: "Local restaurant website with menu, online ordering, and a reservation system.",
+    image: "/images/portfolio/al-and-joes.jpg",
+    liveUrl: "https://alandjoes.com",
   },
   {
     slug: "aztec-fence",
@@ -108,6 +114,8 @@ export const portfolio = [
     title: "Aztec Fence",
     categories: ["Construction", "Fencing"],
     summary: "Fencing contractor site with a project gallery, service areas, and online estimates.",
+    image: "/images/portfolio/aztec-fence.jpg",
+    liveUrl: "https://aztecfence.net",
   },
   {
     slug: "conexion-cafe",
@@ -115,6 +123,8 @@ export const portfolio = [
     title: "Conexión Café",
     categories: ["Café", "Bilingual"],
     summary: "A bilingual café website designed to celebrate Hispanic heritage while serving the neighborhood.",
+    image: "/images/portfolio/conexion-cafe.jpg",
+    liveUrl: "https://conexioncafe.com",
   },
   {
     slug: "crm-dashboard",
@@ -129,6 +139,8 @@ export const portfolio = [
     title: "Deck Systems Inc",
     categories: ["Construction", "Deck Building"],
     summary: "Deck building company website with a design gallery, material options, and project timelines.",
+    image: "/images/portfolio/deck-systems-inc.jpg",
+    liveUrl: "https://decksystemsinc.com",
   },
   {
     slug: "web-pro-chicago",
@@ -136,6 +148,8 @@ export const portfolio = [
     title: "Web Pro Chicago",
     categories: ["Web Design", "Development"],
     summary: "Our own agency site — showcasing modern, professional web design and development services.",
+    image: "/images/portfolio/web-pro-chicago.jpg",
+    liveUrl: "https://webprochicago.com",
   },
   {
     slug: "gus-jov",
@@ -143,6 +157,8 @@ export const portfolio = [
     title: "Gus Jov",
     categories: ["Portfolio", "Creative"],
     summary: "Personal portfolio website for a creative professional with a project showcase and contact page.",
+    image: "/images/portfolio/gus-jov.jpg",
+    liveUrl: "https://gusjov.com",
   },
   {
     slug: "fenix-tax-green-bay",
@@ -157,6 +173,8 @@ export const portfolio = [
     title: "Five Stars Environmental",
     categories: ["Environmental", "Services"],
     summary: "Environmental services company site with comprehensive service listings and certifications.",
+    image: "/images/portfolio/five-stars-environmental.jpg",
+    liveUrl: "https://fivestarsenvironmental.com",
   },
   {
     slug: "paco-mtz",
@@ -165,6 +183,7 @@ export const portfolio = [
     categories: ["Personal Brand", "Portfolio"],
     summary: "Personal brand website for a creative professional — portfolio showcase and contact information.",
     featured: true,
+    image: "/images/portfolio/paco-mtz.jpg",
     liveUrl: "https://pacomtz.com",
   },
   {
@@ -173,6 +192,8 @@ export const portfolio = [
     title: "GV Welding Inc",
     categories: ["Welding", "Industrial"],
     summary: "Welding services company site with service areas, a project gallery, and online quotes.",
+    image: "/images/portfolio/gv-welding-inc.jpg",
+    liveUrl: "https://gvweldinginc.com",
   },
   {
     slug: "hci-orlando",
@@ -180,6 +201,8 @@ export const portfolio = [
     title: "HCI Orlando",
     categories: ["Healthcare", "Consulting"],
     summary: "Healthcare consulting website with service offerings, team profiles, and industry insights.",
+    image: "/images/portfolio/hci-orlando.jpg",
+    liveUrl: "https://hciorlando.com",
   },
   {
     slug: "jc-tile-inc",
@@ -187,6 +210,8 @@ export const portfolio = [
     title: "JC Tile Inc",
     categories: ["Tile Installation", "Construction"],
     summary: "Tile installation company site with a project gallery, material showcase, and service areas.",
+    image: "/images/portfolio/jc-tile-inc.jpg",
+    liveUrl: "https://jctileinc.com",
   },
   {
     slug: "labirrieria",
@@ -194,6 +219,8 @@ export const portfolio = [
     title: "Labirrieria",
     categories: ["Italian Restaurant", "Fine Dining"],
     summary: "Italian restaurant website with an authentic menu, wine list, and reservation system.",
+    image: "/images/portfolio/labirrieria.jpg",
+    liveUrl: "https://labirrieria.com",
   },
   {
     slug: "marquez-construction-co",
@@ -201,6 +228,8 @@ export const portfolio = [
     title: "Marquez Construction Co",
     categories: ["Construction", "General Contracting"],
     summary: "Construction company website with a project portfolio, service areas, and client testimonials.",
+    image: "/images/portfolio/marquez-construction-co.jpg",
+    liveUrl: "https://marquezconstructionco.com",
   },
   {
     slug: "mr-glass-chicago",
@@ -208,6 +237,8 @@ export const portfolio = [
     title: "Mr Glass Chicago",
     categories: ["Glass Services", "Home Services"],
     summary: "Glass repair and installation company site with service listings and emergency service info.",
+    image: "/images/portfolio/mr-glass-chicago.jpg",
+    liveUrl: "https://mrglasschicago.com",
   },
   {
     slug: "new-fashion-salon",
@@ -215,6 +246,8 @@ export const portfolio = [
     title: "New Fashion Salon",
     categories: ["Beauty Salon", "Appointments"],
     summary: "Beauty salon website with a service menu, stylist profiles, and online appointment booking.",
+    image: "/images/portfolio/new-fashion-salon.jpg",
+    liveUrl: "https://newfashionsalon.com",
   },
   {
     slug: "skyline-exteriors-corp",
@@ -222,6 +255,8 @@ export const portfolio = [
     title: "Skyline Exteriors Corp",
     categories: ["Exterior Construction", "Roofing"],
     summary: "Exterior construction company site with a project gallery, service areas, and online quotes.",
+    image: "/images/portfolio/skyline-exteriors-corp.jpg",
+    liveUrl: "https://skylineexteriorscorp.com",
   },
   {
     slug: "soluna-restoration",
@@ -229,6 +264,8 @@ export const portfolio = [
     title: "Soluna Restoration",
     categories: ["Restoration", "Before/After"],
     summary: "Restoration services website with before/after galleries and emergency service areas.",
+    image: "/images/portfolio/soluna-restoration.jpg",
+    liveUrl: "https://solunarestoration.com",
   },
   {
     slug: "the-bakehouse-chicago",
@@ -236,6 +273,8 @@ export const portfolio = [
     title: "The Bakehouse Chicago",
     categories: ["Bakery", "Online Ordering"],
     summary: "Artisan bakery website with a product showcase, online ordering, and catering services.",
+    image: "/images/portfolio/the-bakehouse-chicago.jpg",
+    liveUrl: "https://thebakehousechicago.com",
   },
   {
     slug: "windy-city-connect",
@@ -250,6 +289,8 @@ export const portfolio = [
     title: "XCut CNC",
     categories: ["CNC Machining", "Manufacturing"],
     summary: "CNC machining and manufacturing company site with a capabilities showcase and project gallery.",
+    image: "/images/portfolio/xcut-cnc.jpg",
+    liveUrl: "https://xcutcnc.com",
   },
 ];
 

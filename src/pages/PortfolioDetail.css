@@ -69,12 +69,24 @@
   background: linear-gradient(135deg, #003d3d, #34d399);
 }
 
-.pd-art::after {
+.pd-art:not(:has(.pd-art-img))::after {
   content: "";
   position: absolute;
   inset: 0;
   background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
   background-size: 20px 20px;
+}
+
+.pd-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 8s var(--ease);
+}
+
+.pd-art:hover .pd-art-img {
+  transform: scale(1.06);
 }
 
 .pd-art span {

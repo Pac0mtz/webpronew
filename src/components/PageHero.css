@@ -4,11 +4,6 @@
   overflow: hidden;
 }
 
-.page-hero-glow {
-  height: 600px;
-  opacity: 0.28;
-}
-
 .page-hero-inner {
   text-align: center;
   display: flex;

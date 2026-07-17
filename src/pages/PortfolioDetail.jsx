@@ -49,7 +49,11 @@ export default function PortfolioDetail() {
             </Reveal>
 
             <Reveal variant="right" delay={0.1} className="pd-art" data-index={1}>
-              <span>{project.tag}</span>
+              {project.image ? (
+                <img src={project.image} alt={`${project.title} website preview`} className="pd-art-img" />
+              ) : (
+                <span>{project.tag}</span>
+              )}
             </Reveal>
           </div>
         </div>

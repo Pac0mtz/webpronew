@@ -7,6 +7,8 @@ import Counter from "../components/Counter";
 import Marquee from "../components/Marquee";
 import PortfolioCard from "../components/PortfolioCard";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import MeshBackground from "../components/MeshBackground";
+import Magnetic from "../components/Magnetic";
 import { stats, industries, services, portfolio, testimonials, process, whyUs } from "../data/site";
 import "./Home.css";
 
@@ -29,7 +31,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero" ref={heroRef}>
-        <div className="hero-glow" />
+        <MeshBackground variant="hero" />
         <motion.div className="container hero-inner" style={{ y: heroY, opacity: heroOpacity }}>
           <Reveal variant="fade" className="eyebrow" as="span">
             Chicago Web Agency
@@ -46,12 +48,16 @@ export default function Home() {
             Chicago locals who build websites that actually work. No BS, just results your neighbors already trust.
           </Reveal>
           <Reveal as="div" delay={0.35} className="hero-actions">
-            <Link to="/contact" className="btn btn-primary" data-cursor-hover>
-              Get Started
-            </Link>
-            <Link to="/portfolio" className="btn btn-ghost" data-cursor-hover>
-              View Our Work
-            </Link>
+            <Magnetic>
+              <Link to="/contact" className="btn btn-primary" data-cursor-hover>
+                Get Started
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link to="/portfolio" className="btn btn-ghost" data-cursor-hover>
+                View Our Work
+              </Link>
+            </Magnetic>
           </Reveal>
         </motion.div>
 
@@ -224,12 +230,16 @@ export default function Home() {
             Stop watching your competition take the top spots. Let's put your business where it belongs.
           </Reveal>
           <Reveal delay={0.2} className="hero-actions">
-            <Link to="/contact" className="btn btn-primary" data-cursor-hover>
-              Get a Free Consultation
-            </Link>
-            <Link to="/portfolio" className="btn btn-ghost" data-cursor-hover>
-              See Our Work
-            </Link>
+            <Magnetic>
+              <Link to="/contact" className="btn btn-primary" data-cursor-hover>
+                Get a Free Consultation
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link to="/portfolio" className="btn btn-ghost" data-cursor-hover>
+                See Our Work
+              </Link>
+            </Magnetic>
           </Reveal>
         </div>
       </section>

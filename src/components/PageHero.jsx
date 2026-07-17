@@ -1,10 +1,11 @@
 import Reveal from "./Reveal";
+import MeshBackground from "./MeshBackground";
 import "./PageHero.css";
 
 export default function PageHero({ eyebrow, title, subtitle, children }) {
   return (
     <section className="page-hero">
-      <div className="hero-glow page-hero-glow" />
+      <MeshBackground variant="page" />
       <div className="container page-hero-inner">
         <Reveal className="eyebrow" as="span">
           {eyebrow}
