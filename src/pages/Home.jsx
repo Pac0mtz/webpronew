@@ -5,12 +5,23 @@ import useSEO from "../hooks/useSEO";
 import Reveal from "../components/Reveal";
 import Counter from "../components/Counter";
 import Marquee from "../components/Marquee";
-import PortfolioCard from "../components/PortfolioCard";
+import MarqueeText from "../components/MarqueeText";
+import SplitText from "../components/SplitText";
+import RotatingWord from "../components/RotatingWord";
+import HorizontalWork from "../components/HorizontalWork";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import MeshBackground from "../components/MeshBackground";
 import Magnetic from "../components/Magnetic";
 import { stats, industries, services, portfolio, testimonials, process, whyUs } from "../data/site";
 import "./Home.css";
+
+const lineReveal = {
+  hidden: { y: "112%" },
+  show: (i) => ({
+    y: 0,
+    transition: { duration: 0.9, delay: 0.15 + i * 0.12, ease: [0.16, 1, 0.3, 1] },
+  }),
+};
 
 export default function Home() {
   useSEO({
@@ -22,10 +33,13 @@ export default function Home() {
 
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 140]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
-  const featured = portfolio.filter((p) => p.featured).concat(portfolio.slice(0, 3));
+  const featured = [
+    ...portfolio.filter((p) => p.featured),
+    ...portfolio.filter((p) => !p.featured && p.image).slice(0, 5),
+  ];
 
   return (
     <>
@@ -33,21 +47,33 @@ export default function Home() {
       <section className="hero" ref={heroRef}>
         <MeshBackground variant="hero" />
         <motion.div className="container hero-inner" style={{ y: heroY, opacity: heroOpacity }}>
-          <Reveal variant="fade" className="eyebrow" as="span">
-            Chicago Web Agency
+          <Reveal variant="fade" className="eyebrow hero-eyebrow" as="span">
+            Chicago Web Agency — Est. 2015
           </Reveal>
+
           <h1 className="hero-title">
-            <Reveal as="span" className="hero-line" delay={0.05}>
-              Web Design
-            </Reveal>
-            <Reveal as="span" className="hero-line text-gradient" delay={0.15}>
-              in Chicago
-            </Reveal>
+            <span className="mask-line">
+              <motion.span custom={0} variants={lineReveal} initial="hidden" animate="show">
+                Web Design
+              </motion.span>
+            </span>
+            <span className="mask-line">
+              <motion.span custom={1} variants={lineReveal} initial="hidden" animate="show" className="hero-line-2">
+                in <em className="accent-serif text-gradient">Chicago</em>
+              </motion.span>
+            </span>
           </h1>
-          <Reveal as="p" delay={0.25} className="hero-sub">
+
+          <Reveal as="div" delay={0.5} className="hero-rotator" aria-label="Websites that actually convert, rank, sell, win">
+            Websites that actually&nbsp;
+            <RotatingWord words={["convert.", "rank.", "sell.", "win."]} />
+          </Reveal>
+
+          <Reveal as="p" delay={0.6} className="hero-sub">
             Chicago locals who build websites that actually work. No BS, just results your neighbors already trust.
           </Reveal>
-          <Reveal as="div" delay={0.35} className="hero-actions">
+
+          <Reveal as="div" delay={0.7} className="hero-actions">
             <Magnetic>
               <Link to="/contact" className="btn btn-primary" data-cursor-hover>
                 Get Started
@@ -61,7 +87,7 @@ export default function Home() {
           </Reveal>
         </motion.div>
 
-        <Reveal variant="fade" delay={0.5} className="hero-marquee">
+        <Reveal variant="fade" delay={0.9} className="hero-marquee">
           <Marquee items={industries} />
         </Reveal>
       </section>
@@ -88,9 +114,9 @@ export default function Home() {
               01 — Services
             </Reveal>
             <div className="section-head-row">
-              <Reveal as="h2" className="section-title">
+              <SplitText as="h2" className="section-title">
                 What We Do
-              </Reveal>
+              </SplitText>
               <Reveal delay={0.1}>
                 <Link to="/services" className="btn btn-ghost btn-sm" data-cursor-hover>
                   All Services
@@ -112,34 +138,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PORTFOLIO */}
-      <section className="section section-alt">
-        <div className="container">
-          <div className="section-head">
-            <Reveal className="eyebrow" as="span">
-              02 — Portfolio
-            </Reveal>
-            <div className="section-head-row">
-              <Reveal as="h2" className="section-title">
-                Featured Work
-              </Reveal>
-              <Reveal delay={0.1}>
-                <Link to="/portfolio" className="btn btn-ghost btn-sm" data-cursor-hover>
-                  All Projects
-                </Link>
-              </Reveal>
-            </div>
-          </div>
+      {/* PORTFOLIO — horizontal scroll showcase */}
+      <HorizontalWork projects={featured} eyebrow="02 — Portfolio" title="Featured Work" />
 
-          <div className="portfolio-grid">
-            {featured.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 0.06} variant="scale">
-                <PortfolioCard project={p} index={i} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <MarqueeText text="DESIGN — DEVELOP — LAUNCH — GROW" />
 
       {/* WHY US */}
       <section className="section">
@@ -148,17 +150,19 @@ export default function Home() {
             <Reveal className="eyebrow" as="span">
               03 — Why Us
             </Reveal>
-            <Reveal as="h2" className="section-title">
-              Built for <span className="text-gradient">Chicago Business</span>
-            </Reveal>
+            <SplitText as="h2" className="section-title">
+              Built for Chicago Business
+            </SplitText>
             <Reveal as="p" delay={0.1} className="why-sub">
               We're not some outsourced agency halfway across the country. We're your Chicago neighbors who know
               exactly what it takes to compete in this city.
             </Reveal>
             <Reveal delay={0.2}>
-              <Link to="/contact" className="btn btn-primary" data-cursor-hover>
-                Work With Us
-              </Link>
+              <Magnetic>
+                <Link to="/contact" className="btn btn-primary" data-cursor-hover>
+                  Work With Us
+                </Link>
+              </Magnetic>
             </Reveal>
           </div>
 
@@ -183,9 +187,9 @@ export default function Home() {
             <Reveal className="eyebrow" as="span">
               04 — Testimonials
             </Reveal>
-            <Reveal as="h2" className="section-title">
+            <SplitText as="h2" className="section-title">
               What Clients Say
-            </Reveal>
+            </SplitText>
           </div>
           <Reveal variant="scale">
             <TestimonialCarousel items={testimonials} />
@@ -200,9 +204,9 @@ export default function Home() {
             <Reveal className="eyebrow" as="span">
               05 — Process
             </Reveal>
-            <Reveal as="h2" className="section-title">
+            <SplitText as="h2" className="section-title">
               How We Work
-            </Reveal>
+            </SplitText>
           </div>
 
           <div className="process-grid">
@@ -217,6 +221,8 @@ export default function Home() {
         </div>
       </section>
 
+      <MarqueeText text="LET'S BUILD SOMETHING GREAT" reverse />
+
       {/* CTA */}
       <section className="section cta">
         <div className="container cta-inner glass">
@@ -224,7 +230,7 @@ export default function Home() {
             Ready to Grow?
           </Reveal>
           <Reveal as="h2" className="cta-title">
-            Let's Build <span className="text-gradient">Something Great</span>
+            Let's Build <em className="accent-serif text-gradient">Something Great</em>
           </Reveal>
           <Reveal as="p" delay={0.1} className="cta-sub">
             Stop watching your competition take the top spots. Let's put your business where it belongs.

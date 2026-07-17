@@ -124,6 +124,51 @@ img {
   color: transparent;
 }
 
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(246, 248, 247, 0.85);
+}
+
+.accent-serif {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* masked line reveals */
+.mask-line {
+  display: block;
+  overflow: hidden;
+}
+
+.mask-line > span,
+.mask-line > em {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* split-text word reveals */
+.split-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.split-word {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* page curtain transition */
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: linear-gradient(120deg, #04302f, #062421);
+  pointer-events: none;
+}
+
 /* buttons */
 .btn {
   position: relative;
@@ -144,6 +189,23 @@ img {
 .btn-primary {
   background: var(--emerald-400);
   color: #04100f;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s var(--ease);
+}
+
+.btn-primary:hover::before {
+  left: 130%;
 }
 
 .btn-primary:hover {

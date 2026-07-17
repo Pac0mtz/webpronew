@@ -20,17 +20,34 @@
 .hero-title {
   display: flex;
   flex-direction: column;
-  font-size: clamp(3rem, 9vw, 6.4rem);
+  font-size: clamp(3.2rem, 10vw, 7.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 
-.hero-line {
-  display: block;
+.hero-line-2 .accent-serif {
+  font-size: 1.08em;
+  padding-right: 0.06em;
+}
+
+.hero-rotator {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.7rem);
+  color: var(--text-dim);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-rotator .rotating-word em {
+  font-size: 1.15em;
 }
 
 .hero-sub {
   max-width: 560px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--text-dim);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-faint);
 }
 
 .hero-actions {

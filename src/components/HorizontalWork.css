@@ -1,0 +1,168 @@
+.hwork {
+  position: relative;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.hwork.is-pinned {
+  height: 320vh;
+}
+
+.hwork-sticky {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(28px, 4vh, 56px);
+  padding: clamp(56px, 8vh, 96px) 0;
+}
+
+.hwork.is-pinned .hwork-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hwork-head {
+  width: 100%;
+}
+
+.hwork-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hwork-track {
+  display: flex;
+  gap: clamp(18px, 2.5vw, 32px);
+  padding-left: max(24px, calc((100vw - var(--container)) / 2 + 24px));
+  padding-right: 24px;
+  will-change: transform;
+}
+
+/* mobile / touch fallback: native horizontal scroll */
+.hwork:not(.is-pinned) .hwork-track {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+}
+
+.hwork:not(.is-pinned) .hwork-card {
+  scroll-snap-align: start;
+}
+
+.hwork-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(300px, 44vw, 620px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hwork-index {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--emerald-300);
+}
+
+.hwork-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.hwork-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.02);
+  filter: saturate(0.92) brightness(0.92);
+  transition: transform 0.8s var(--ease), filter 0.5s var(--ease);
+}
+
+.hwork-card:hover .hwork-media img {
+  transform: scale(1.07);
+  filter: saturate(1.05) brightness(1);
+}
+
+.hwork-media-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #003d3d, #0a7d6f);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(4, 16, 15, 0.7);
+}
+
+.hwork-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hwork-meta h3 {
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+}
+
+.hwork-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.hwork-tags span {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.hwork-card-more {
+  width: clamp(220px, 24vw, 320px);
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  aspect-ratio: auto;
+  gap: 12px;
+  transition: border-color 0.4s var(--ease), background 0.4s var(--ease);
+}
+
+.hwork-card-more:hover {
+  border-color: var(--emerald-400);
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.hwork-more-arrow {
+  font-size: 2.2rem;
+  color: var(--emerald-300);
+  transition: transform 0.4s var(--ease);
+}
+
+.hwork-card-more:hover .hwork-more-arrow {
+  transform: translateX(8px);
+}
+
+.hwork-more-label {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}

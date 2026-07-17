@@ -1,0 +1,14 @@
+.rotating-word {
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.rotating-word em {
+  display: inline-block;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  color: var(--emerald-300);
+  will-change: transform;
+}

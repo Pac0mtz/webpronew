@@ -13,10 +13,17 @@ const LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      setHidden(y > lastY && y > 220);
+      lastY = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -30,7 +37,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className={`nav-wrap ${scrolled ? "is-scrolled" : ""}`}>
+    <header className={`nav-wrap ${scrolled ? "is-scrolled" : ""} ${hidden && !open ? "is-hidden" : ""}`}>
       <div className="container nav-inner glass">
         <Link to="/" className="nav-logo" onClick={() => setOpen(false)}>
           <span className="nav-logo-mark">WPC</span>

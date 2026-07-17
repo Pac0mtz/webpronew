@@ -6,6 +6,16 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-inner">
+        <div className="footer-cta-block">
+          <span className="eyebrow">Have a project in mind?</span>
+          <Link to="/contact" className="footer-cta" data-cursor-hover>
+            Let's Talk
+            <span className="footer-cta-arrow" aria-hidden="true">
+              →
+            </span>
+          </Link>
+        </div>
+
         <div className="footer-top">
           <div className="footer-brand">
             <span className="nav-logo-mark">WPC</span>

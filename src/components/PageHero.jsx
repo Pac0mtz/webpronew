@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SplitText from "./SplitText";
 import MeshBackground from "./MeshBackground";
 import "./PageHero.css";
 
@@ -10,11 +11,11 @@ export default function PageHero({ eyebrow, title, subtitle, children }) {
         <Reveal className="eyebrow" as="span">
           {eyebrow}
         </Reveal>
-        <Reveal as="h1" delay={0.08} className="page-hero-title">
+        <SplitText as="h1" delay={0.1} className="page-hero-title">
           {title}
-        </Reveal>
+        </SplitText>
         {subtitle && (
-          <Reveal as="p" delay={0.16} className="page-hero-sub">
+          <Reveal as="p" delay={0.3} className="page-hero-sub">
             {subtitle}
           </Reveal>
         )}

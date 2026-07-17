@@ -4,7 +4,12 @@
   left: 0;
   right: 0;
   z-index: 100;
-  transition: top 0.4s var(--ease);
+  transition: top 0.4s var(--ease), transform 0.5s var(--ease), opacity 0.4s var(--ease);
+}
+
+.nav-wrap.is-hidden {
+  transform: translateY(-130%);
+  opacity: 0;
 }
 
 .nav-inner {

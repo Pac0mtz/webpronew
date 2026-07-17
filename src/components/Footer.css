@@ -4,6 +4,48 @@
   background: var(--bg-soft);
 }
 
+.footer-cta-block {
+  padding-bottom: 64px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-cta-block .eyebrow {
+  display: flex;
+}
+
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18em;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.2rem, 10vw, 8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  transition: color 0.4s var(--ease);
+}
+
+.footer-cta:hover {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-cta-arrow {
+  display: inline-block;
+  font-size: 0.7em;
+  color: var(--emerald-400);
+  transition: transform 0.45s var(--ease);
+  -webkit-text-fill-color: var(--emerald-400);
+}
+
+.footer-cta:hover .footer-cta-arrow {
+  transform: translateX(0.25em) rotate(-45deg);
+}
+
 .footer-top {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr;
