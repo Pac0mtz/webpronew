@@ -1,0 +1,135 @@
+.pd-hero {
+  padding: 150px 0 40px;
+}
+
+.pd-back {
+  display: inline-flex;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+.pd-back:hover {
+  color: var(--emerald-300);
+}
+
+.pd-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.pd-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--emerald-300);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.pd-head h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-bottom: 16px;
+}
+
+.pd-summary {
+  max-width: 480px;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.pd-cats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.pd-cats span {
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+}
+
+.pd-art {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #003d3d, #34d399);
+}
+
+.pd-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.pd-art span {
+  position: relative;
+  z-index: 1;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgba(4, 16, 15, 0.75);
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 860px) {
+  .pd-head {
+    grid-template-columns: 1fr;
+  }
+  .pd-art {
+    height: 220px;
+  }
+}
+
+.pd-meta-section {
+  padding-top: 0;
+}
+
+.pd-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.pd-meta-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd-meta-card span {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pd-meta-card strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .pd-meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

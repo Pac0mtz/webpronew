@@ -1,0 +1,105 @@
+.pf-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+
+.pf-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+}
+
+.pf-card-art {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.pf-card-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.pf-card-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.5;
+}
+
+.pf-card-art[data-index="1"]::before { background: linear-gradient(135deg, #003d3d, #0a7d6f); }
+.pf-card-art[data-index="2"]::before { background: linear-gradient(135deg, #0a7d6f, #34d399); }
+.pf-card-art[data-index="3"]::before { background: linear-gradient(135deg, #062024, #145c52); }
+.pf-card-art[data-index="4"]::before { background: linear-gradient(135deg, #34d399, #a7f3d0); }
+.pf-card-art[data-index="5"]::before { background: linear-gradient(135deg, #003d3d, #34d399); }
+.pf-card-art[data-index="6"]::before { background: linear-gradient(135deg, #0f2b28, #006666); }
+
+.pf-card-tag {
+  position: relative;
+  z-index: 1;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(4, 16, 15, 0.55);
+  color: #f6f8f7;
+  backdrop-filter: blur(6px);
+}
+
+.pf-card-body {
+  padding: 22px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.pf-card-body h3 {
+  font-size: 1.2rem;
+}
+
+.pf-card-body p {
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.pf-card-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pf-card-cats span {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+}
+
+.pf-card-link {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  color: var(--emerald-300);
+}
+
+.pf-card-link i {
+  transition: transform 0.35s var(--ease);
+  font-style: normal;
+}
+
+.pf-card:hover .pf-card-link i {
+  transform: translateX(4px);
+}

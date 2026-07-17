@@ -1,0 +1,155 @@
+.about-stats-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.about-stats-grid .stat-value {
+  color: var(--emerald-300);
+}
+
+@media (max-width: 760px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+}
+
+.about-story {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-story h2 {
+  margin-top: 10px;
+}
+
+.about-story p {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 760px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.value-card {
+  padding: 30px;
+}
+
+.value-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-card {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 48px);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  color: #04100f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.team-info h3 {
+  font-size: 1.6rem;
+}
+
+.team-role {
+  display: block;
+  color: var(--emerald-300);
+  font-size: 0.9rem;
+  margin: 6px 0 14px;
+}
+
+.team-info > p {
+  margin-bottom: 26px;
+}
+
+.team-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-row-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--text-dim);
+}
+
+.skill-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--panel-strong);
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--grad-text);
+}
+
+@media (max-width: 620px) {
+  .team-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .team-avatar {
+    margin: 0 auto;
+  }
+  .skill-row-head {
+    text-align: left;
+  }
+}

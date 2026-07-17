@@ -1,0 +1,27 @@
+.page-hero {
+  position: relative;
+  padding: clamp(150px, 20vw, 210px) 0 60px;
+  overflow: hidden;
+}
+
+.page-hero-glow {
+  height: 600px;
+  opacity: 0.28;
+}
+
+.page-hero-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  margin-bottom: 16px;
+}
+
+.page-hero-sub {
+  max-width: 560px;
+  font-size: 1.05rem;
+}

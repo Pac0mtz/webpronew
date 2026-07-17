@@ -1,0 +1,48 @@
+.portfolio-page {
+  padding-top: 0;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-pill {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-family: "Space Grotesk", sans-serif;
+  transition: all 0.3s var(--ease);
+}
+
+.filter-pill:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.filter-pill.active {
+  background: var(--emerald-400);
+  border-color: var(--emerald-400);
+  color: #04100f;
+}
+
+.portfolio-grid-full {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 960px) {
+  .portfolio-grid-full {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .portfolio-grid-full {
+    grid-template-columns: 1fr;
+  }
+}

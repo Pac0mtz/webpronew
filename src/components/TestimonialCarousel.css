@@ -1,0 +1,82 @@
+.testi {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.testi-stage {
+  padding: clamp(28px, 5vw, 56px);
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.testi-stars {
+  color: var(--emerald-400);
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.testi-quote {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 26px;
+}
+
+.testi-person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grad-brand);
+  color: #04100f;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.testi-person div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.88rem;
+}
+
+.testi-person strong {
+  color: var(--text);
+}
+
+.testi-person span {
+  color: var(--text-faint);
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  border: none;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.testi-dot.active {
+  background: var(--emerald-400);
+  transform: scale(1.3);
+}
